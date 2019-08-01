@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+dependencies {
+    compile files('libs/android-support-v4.jar')
+}
+
+
+
+
+
+task YiXuGetPermission(type:Copy){
+    //删除以前版本的psdk
+
+    delete('/libs/npaysdk_test.jar')
+    from('build/intermediates/bundles/release/')
+
+    //结果输出路径
+    into('/libs/')
+    include('classes.jar')
+    //更改结果名称
+    rename('classes.jar', 'YxPermission.jar')
+}
+YiXuGetPermission.dependsOn(build)

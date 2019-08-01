@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="是否获取全部权限" />
+            <TextView
+                android:id="@+id/onAllowAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="未获得全部权限" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="已经获取权限列表" />
+            <TextView
+                android:id="@+id/permissionListAllow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="null" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户未允许权限" />
+
+            <TextView
+                android:id="@+id/permissionListDenied"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="null" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户未同意并点击不再显示权限" />
+
+            <TextView
+                android:id="@+id/permissionListDontShow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="null" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
