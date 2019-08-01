@@ -33,16 +33,16 @@ dependencies {
 
 
 
-task YiXuGetPermission(type:Copy){
+task PermissionTool(type:Copy){
     //删除以前版本的psdk
 
-    delete('/libs/npaysdk_test.jar')
+    delete('/libs/PermissionTool.jar')
     from('build/intermediates/bundles/release/')
 
     //结果输出路径
     into('/libs/')
     include('classes.jar')
     //更改结果名称
-    rename('classes.jar', 'YxPermission.jar')
+    rename('classes.jar', 'PermissionTool.jar')
 }
-YiXuGetPermission.dependsOn(build)
+PermissionTool.dependsOn(build)

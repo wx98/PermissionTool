@@ -44,6 +44,7 @@ public class PermissionUtil extends Activity {
     private static int mRequestCode;
 
     private static boolean isAllGranted = true;
+
     private volatile static RequestPermissionsResultCallBack ResultcallBack = null;
 
 
