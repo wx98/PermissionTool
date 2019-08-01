@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
+    publishNonDefault true
 
 
 
@@ -36,13 +37,13 @@ dependencies {
 task PermissionTool(type:Copy){
     //删除以前版本的psdk
 
-    delete('/libs/PermissionTool.jar')
-    from('build/intermediates/bundles/release/')
+    delete('/libs/test.jar')
+    from('build/intermediates/packaged-classes/release/')
 
     //结果输出路径
-    into('/libs/')
+    into('../app/libs')
     include('classes.jar')
     //更改结果名称
-    rename('classes.jar', 'PermissionTool.jar')
+    rename('classes.jar', 'test.jar')
 }
 PermissionTool.dependsOn(build)

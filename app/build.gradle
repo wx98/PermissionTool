@@ -19,11 +19,15 @@ android {
 }
 
 dependencies {
-    compile project(':PerissionsTool')
+    //    compile project(':PerissionsTool')
+    //    compile 'com.github.PermissionTool:wx98:0.1'
+    compile 'com.github.wx98:PermissionTool:1.0'
+//    compile files('libs/test.jar')
+    compile files('libs/android-support-v4.jar')
 }
 
-repositories {
-    flatDir {
-        dirs project(':PerissionsTool').file('libs')
-    }
-}
+//repositories {
+//    flatDir {
+//        dirs project(':PerissionsTool').file('libs')
+//    }
+//}
