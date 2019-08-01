@@ -1,6 +1,5 @@
 package com.wx1998.perissions;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Fragment;
@@ -238,7 +237,6 @@ public class PermissionUtil extends Activity {
         if (requestCode == mRequestCode) {
             permissionListDontShow.clear();
             permissionListDenied.clear();
-            permissionListAllow.clear();
 
             LogUtil.w("-------------------判断权限申请结果-----------------------");
             for (int i = 0; i < permissions.length; i++) {
