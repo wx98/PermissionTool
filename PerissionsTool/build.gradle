@@ -27,23 +27,28 @@ android {
 
 
 dependencies {
-    compile files('libs/android-support-v4.jar')
+    //此处用于调试
+//    compile files('libs/android-support-v4.jar')
+    //此处用于发布时，不将v4编译
+    provided files('libs/android-support-v4.jar')
 }
 
-
-
-
-
+/**
+ * 生成Jar的配置
+ * 运行../MakeJarPerissiosTool.bat可以直接讲PerissionsTool打包成jar
+ * 输出目录在../app/libs
+ * 可以直接在项目中依赖jar
+ */
 task PermissionTool(type:Copy){
     //删除以前版本的psdk
 
-    delete('/libs/test.jar')
+    delete('/libs/PerissionsTool.jar')
     from('build/intermediates/packaged-classes/release/')
 
     //结果输出路径
     into('../app/libs')
     include('classes.jar')
     //更改结果名称
-    rename('classes.jar', 'test.jar')
+    rename('classes.jar', 'PerissionsTool.jar')
 }
 PermissionTool.dependsOn(build)

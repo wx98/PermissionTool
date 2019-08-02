@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.TextView;
 
-import com.wx1998.perissions.PermissionUtil;
+import com.wx1998.perissions.PermissionsTool;
 import com.wx1998.perissions.RequestPermissionsResultCallBack;
 
 public class MainActivity extends Activity {
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 
     private void GetPermission(){
         //用来控制Log的开关
-        PermissionUtil.LogSwitch(true);
+        PermissionsTool.LogSwitch(true);
         /**
          * 用来接收获取权限状态的回调
          */
@@ -70,14 +70,15 @@ public class MainActivity extends Activity {
             }
         };
 
-        PermissionUtil.getInstance(this)
+        PermissionsTool.getInstance(this)
                 //设置回调
                 .setCallback(CallBack)
                 //设置需求权限
                 .setPermissionList(
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
                         Manifest.permission.CAMERA,
-                        Manifest.permission.ACCESS_FINE_LOCATION
+                        Manifest.permission.READ_PHONE_STATE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_SMS
                 )
                 //获取权限
                 .getPermission();
@@ -87,7 +88,7 @@ public class MainActivity extends Activity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         //必须在此处调用此方法
-        PermissionUtil.getInstance(this).onRequestPermissionResult(requestCode,permissions,grantResults);
+        PermissionsTool.getInstance(this).onRequestPermissionResult(requestCode,permissions,grantResults);
     }
 
 
