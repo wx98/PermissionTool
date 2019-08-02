@@ -2,18 +2,15 @@
 ## 引入工具类
 ### 直接引入jar
 [PermissionToool.jar]()   
-''' java   
+<pre>
 dependencies {   
-    compile files('libs/PerissionsTool.jar')   
-    compile files('libs/android-support-v4.jar')   
+    compile files('libs/PerissionsTool.jar')
 }   
-'''   
+</pre>   
 ### 远程引用   
 <pre>
 allprojects {   
-&#9;repositories {   
-        google()   
-        jcenter()   
+    repositories {
         maven { url 'https://jitpack.io' }   
     }   
 }   
