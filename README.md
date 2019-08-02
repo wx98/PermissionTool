@@ -20,9 +20,13 @@ dependencies {
 </pre>
 ## 如何使用
 ### 引入
->import com.wx1998.perissions.PermissionsTool;   
+<pre>
+import com.wx1998.perissions.PermissionsTool;   
 import com.wx1998.perissions.RequestPermissionsResultCallBack;
+</pre>
 ### 获取本类实例
-ermissionsTool.getInstance(this);
+<pre>
+PermissionsTool.getInstance(this);
+</pre>
 ### 设置回调setCallback(CallBack)
 ## 方法
